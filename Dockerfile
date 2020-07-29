@@ -20,7 +20,6 @@ RUN npm init -y
 
 RUN npx openzeppelin init test --no-interactive
 
-RUN cat networks.js
+CMD  npx openzeppelin deploy --kind regular --no-interactive --network development Box
 
-CMD echo 'start oz deploy' && cat package.json && pwd && cat ./networks.js && cat ./.openzeppelin/project.json && npx openzeppelin deploy ./contracts/Contract.sol --kind regular --no-interactive --network development && ls -alR ./contracts && echo 'finish oz deploy'
 

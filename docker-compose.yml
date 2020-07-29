@@ -1,0 +1,13 @@
+version: "3"
+services:
+  devnet:
+    image: trufflesuite/ganache-cli:latest
+    ports:
+      - "8545:8545"
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    depends_on:
+      - "devnet"

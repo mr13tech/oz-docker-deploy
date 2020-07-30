@@ -2,6 +2,7 @@ version: "3"
 services:
   devnet:
     image: trufflesuite/ganache-cli:latest
+    command: "-h 0.0.0.0 -d"
     ports:
       - "8545:8545"
     network_mode: host
@@ -12,3 +13,6 @@ services:
     tty: true
     depends_on:
       - "devnet"
+    network_mode: host
+
+    
